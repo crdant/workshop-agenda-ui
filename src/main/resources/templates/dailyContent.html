@@ -8,10 +8,10 @@
 	<main role="main">
 		<div class="doc-list-header">
 		<h1 th:text="${dailyContent.name}">name</h1>
-		<h3 th:text="${dailyContent.description}" style="font-size: 25px">description</h3>
+		<h3 th:utext="${dailyContent.description}" style="font-size: 25px">description</h3>
 		</div>
  	   	<div class="doc-list-entry" style="padding:30px;"></div>
- 	   	
+
 		<div th:each="topic,iterationStatus  : ${dailyContent.topics}">
 			<div>
     			<div style="float:left;">
@@ -19,22 +19,23 @@
        				<span th:if="${not #strings.isEmpty(topic.labURL) or not #strings.isEmpty(topic.slideURL) or topic.id == 'emptysession'}" th:text="${topic.title}">title</span><br th:if="${not #strings.isEmpty(topic.title)}"></br>
        				<span th:text="${topic.description}" th:if="${not #strings.isEmpty(topic.description)}">description</span>
     			</div> <br th:if="${not #strings.isEmpty(topic.description)}"></br>
-        		<div style="float:right;"> 
+        		<div style="float:right;">
           			<a th:href="${topic.slideURL}" target="_blank" class="tag-item label label-primary mlm" th:if="${not #strings.isEmpty(topic.slideURL) and topic.id != 'emptysession'}">slides</a>
-          			<a th:href="${topic.labURL}" target="_blank" class="tag-item label label-primary" th:if="${not #strings.isEmpty(topic.labURL) and topic.id != 'emptysession'}">labs</a>  
+          			<a th:href="${topic.labURL}" target="_blank" class="tag-item label label-primary" th:if="${not #strings.isEmpty(topic.labURL) and topic.id != 'emptysession'}">labs</a>
+                    <a th:href="${topic.labURL}" target="_blank" class="tag-item label label-primary" th:if="${not #strings.isEmpty(topic.videoURL) and topic.id != 'emptysession'}">video</a>
     			</div>
-  			</div><br/> 
+  			</div><br/>
 
 			<hr style="height:1px;"></hr>
 		</div>
-		
-                          
+
+
 	</main>
 </div>
- 	
+
 <div th:include="components/resources"></div>
 
 <div th:include="components/footer"></div>
- 
+
 </body>
 </html>

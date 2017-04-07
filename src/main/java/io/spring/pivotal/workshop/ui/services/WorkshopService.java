@@ -44,7 +44,7 @@ public class WorkshopService {
 	public List<Instructor> instructors() {
 		return restTemplate.getForObject("http://workshop/instructor", List.class);
 	}
-	
+
 	@HystrixCommand(fallbackMethod = "fallbackContent")
 	public List<Content> content() {
 		return restTemplate.getForObject("http://workshop/content", List.class);
@@ -69,7 +69,7 @@ public class WorkshopService {
 	private List<Instructor> fallbackInstructors() {
 		return new ArrayList<Instructor>();
 	}
-	
+
 	private List<Content> fallbackContent() {
 		return new ArrayList<Content>();
 	}

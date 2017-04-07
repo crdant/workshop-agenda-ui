@@ -8,17 +8,19 @@ public class Content {
 	private String description;
 	private String slideURL;
 	private String labURL;
+    private String videoURL;
 
 	public Content() {
 	}
 
-	public Content(String courseID, String title, String section, String description, String slideURL, String labURL) {
+	public Content(String courseID, String title, String section, String description, String slideURL, String labURL, String videoURL) {
 		this.courseID = courseID;
 		this.title = title;
 		this.section = section;
 		this.description = description;
 		this.slideURL = slideURL;
 		this.labURL = labURL;
+        this.videoURL = videoURL;
 	}
 
 	public String getCourseID() {
@@ -68,4 +70,11 @@ public class Content {
 	public void setLabURL(String labURL) {
 		this.labURL = labURL;
 	}
+    public String getVideoURL() {
+        return videoURL;
+    }
+
+    public void setVideoURL(String videoURL) {
+        this.videoURL = videoURL;
+    }
 }
