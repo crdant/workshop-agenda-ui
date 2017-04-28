@@ -6,7 +6,7 @@ applications:
   host: boston-scientific-workshop
   path: target/workshop-agenda-ui-0.0.1-SNAPSHOT.jar
   services:
-  - service-registry
+  - service-registry-boston-scientific
   - circuit-breaker
 env:
   SPRING_PROFILES_ACTIVE: pcf
